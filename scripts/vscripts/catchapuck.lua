@@ -26,6 +26,7 @@ function CatchaPuckGameMode:InitGameMode()
   InitLogFile( "log/catchapuck.txt","")
   ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(CatchaPuckGameMode,'ReplaceSkills'), self)
   ListenToGameEvent('player_connect_full', Dynamic_Wrap(CatchaPuckGameMode, 'AssignPlayer'), self)
+  ListenToGameEvent('dota_player_killed', Dynamic_Wrap(CatchaPuckGameMode, 'Event_PuckKilled'), self)
    Convars:RegisterCommand('fake', function()
     -- Check if the server ran it
     if not Convars:GetCommandClient() or DEBUG then
@@ -91,7 +92,8 @@ function CatchaPuckGameMode:AssignPlayer()
 	local ply = EntIndexToHScript(entIndex)
 	local playerID = ply:GetPlayerID()
 	capConnected = capConnected + 1
-	print(playerID)
+	print('OH GOD ITS HABBEDING')
+	print('PlayerID = '..playerID)
 	if playerID == -1 then
 		if #capRadiant > #capDire then
 			print('Setting to bad guys')
@@ -103,4 +105,6 @@ function CatchaPuckGameMode:AssignPlayer()
 			table.insert(capRadiant,ply)
 		end
 	end
+function CatchaPuckGameMode:Event_PuckKilled()
+	
 end

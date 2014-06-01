@@ -1,80 +1,82 @@
+"DOTAAbilities"
+{
+	"cap_wraith_king_stun"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityName"					"cap_wraith_king_stun"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+			"BaseClass"						"ability_datadriven"
+			
+			// Casting
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"700"
+			"AbilityCastPoint"				"0 0 0 0"
 
-"cap_wraith_king_stun"
+			// Time		
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"            "7 6 5 4"
+
+			// Damage.
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityDamage"					"100 250 375 450"
+
+			// Cost
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"50 60 70 80"
+
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"blast_speed"			"1000"
+				}
+				
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"blast_stun_duration"	"2.0"
+				}
+				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"blast_slow"			"-20"
+				}
+			}
+		}
+	//=================================================================================================================
+	// Spawn Creeps
+	//================================================================================================================= 
+	"spawn_creeps"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityName"					"cap_wraith_king_stun"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
-		"BaseClass"						"ability_datadriven"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0 0 0 0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"            "7 6 5 4"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 250 375 450"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 60 70 80"
+		"AbilityName"                   "spawn_creeps"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"                    "none"
+		"BaseClass"                     "ability_datadriven"        
 
 
-		// Special
+		//Ability
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"OnSpellStart"
 		{
-			"01"
+			"SpawnUnit"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_speed"			"1000"
-			}
-			
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_stun_duration"	"2.0"
-			}
-			
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_slow"			"-20"
+				"UnitName"  "npc_dota_creature_creep_melee"
+				"Target"    "POINT"
+				"UnitCount" "4"
 			}
 		}
+				// This custom ability has no Modifiers, since no ModifierName was defined under Ability and because all this ability does is spawn creeps.
+				// This custom ability also has no Special Abilities, because there is no Modifier to define any Special Abilities.
 	}
-//=================================================================================================================
-// Spawn Creeps
-//================================================================================================================= 
-"spawn_creeps"
-{
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityName"                   "spawn_creeps"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
-    "AbilityTextureName"                    "none"
-    "BaseClass"                     "ability_datadriven"        
-
-
-    //Ability
-    //-------------------------------------------------------------------------------------------------------------
-    "OnSpellStart"
-    {
-        "SpawnUnit"
-        {
-            "UnitName"  "npc_dota_creature_creep_melee"
-            "Target"    "POINT"
-            "UnitCount" "4"
-        }
-    }
-            // This custom ability has no Modifiers, since no ModifierName was defined under Ability and because all this ability does is spawn creeps.
-            // This custom ability also has no Special Abilities, because there is no Modifier to define any Special Abilities.
 }
