@@ -1,0 +1,9 @@
+Name: Catch a bad guy
+1 versus 5 situation. 5 guys are trying to kill Puck on the opposite team through the use of dodgeable spells such as stuns, hooks and slows. However, Puck has many options to evade them and needs to do so for a minute or maybe 30 seconds after which he wins. Maybe even 2 or 3 minutes, depends.
+--Puck has it's own abilities as well blink dagger, force staff, eul and ghost scepter.
+--5 enemies that are trying to kill Puck have stuns and slows and moderately strong attack damage.
+--All items and skills will have lower cooldown and possibly no manacost.
+--Map should be moderately small with high grounds and low grounds as well as some trees.
+--Upon winning or losing, the next player becomes Puck and tries to not get killed.
+--After everyone has had a chance to be Puck once they will be able to upgrade their spells to be faster and have lower cooldown.
+--After 3 rounds everyone will be able to choose a unique ultimate ability which has a high cooldown but is fast and harder to dodge.
